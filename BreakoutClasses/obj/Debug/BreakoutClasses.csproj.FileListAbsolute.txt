@@ -1,0 +1,10 @@
+C:\Users\Володя\Desktop\Breakout\BreakoutClasses\bin\Debug\BreakoutClasses.dll
+C:\Users\Володя\Desktop\Breakout\BreakoutClasses\bin\Debug\BreakoutClasses.pdb
+C:\Users\Володя\Desktop\Breakout\BreakoutClasses\obj\Debug\BreakoutClasses.csprojResolveAssemblyReference.cache
+C:\Users\Володя\Desktop\Breakout\BreakoutClasses\obj\Debug\BreakoutClasses.dll
+C:\Users\Володя\Desktop\Breakout\BreakoutClasses\obj\Debug\BreakoutClasses.pdb
+C:\vova\CSharp\Breakout\BreakoutClasses\bin\Debug\BreakoutClasses.dll
+C:\vova\CSharp\Breakout\BreakoutClasses\bin\Debug\BreakoutClasses.pdb
+C:\vova\CSharp\Breakout\BreakoutClasses\obj\Debug\BreakoutClasses.dll
+C:\vova\CSharp\Breakout\BreakoutClasses\obj\Debug\BreakoutClasses.pdb
+C:\vova\CSharp\Breakout\BreakoutClasses\obj\Debug\BreakoutClasses.csprojResolveAssemblyReference.cache
