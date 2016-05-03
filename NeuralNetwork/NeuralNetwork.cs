@@ -3,9 +3,9 @@ using System.IO;
 
 /// <summary>
 /// Classic example of Neural Network
-/// Read about in on: https://stevenmiller888.github.io/mind-how-to-build-a-neural-network/
-/// Learn about in on: https://www.youtube.com/watch?v=9aHJ-FAzQaE
-/// Game idea and architecture of classes is all mine
+/// Read about it on: https://stevenmiller888.github.io/mind-how-to-build-a-neural-network/
+/// Learn about it on: https://www.youtube.com/watch?v=9aHJ-FAzQaE
+/// Game idea and architecture of classes are all mine
 /// End serri fir mi Englesh:)
 /// </summary>
 
@@ -41,8 +41,8 @@ namespace NeuralNetwork
             {
                 SecondWeights[i] = (float)Convert.ToDouble(weightsfile.ReadLine());
             }
-            //for (int i = 0; i < countOfInputs * countOfHiddenNeurons; i++) FirstWeights[i] = (float)rnd.NextDouble();
-            //for (int i = 0; i < countOfHiddenNeurons; i++) SecondWeights[i] = (float)rnd.NextDouble();
+            //for (int i = 0; i < countOfInputs * countOfHiddenNeurons; i++) FirstWeights[i] = (float)rnd.NextDouble() / 50.0f;
+            //for (int i = 0; i < countOfHiddenNeurons; i++) SecondWeights[i] = (float)rnd.NextDouble() / 50.0f;
 
             // if you comment a file-reading part and uncomment these two cycles then you receive a start random weights
             // be careful! I give you trained weights in file, so if you will use random ones and save it
@@ -67,8 +67,10 @@ namespace NeuralNetwork
         }
         static public float DerivateSigmoid(float x)
         {
-            float eX = (1 / (float)Math.Pow(Math.E, x));
-            return (float)(eX / Math.Pow(1 + eX, 2));
+            //float eX = (1 / (float)Math.Pow(Math.E, x));
+            //return (float)(eX / Math.Pow(1 + eX, 2));
+            float y = Sigmoid(x);
+            return y * (1 - y);
         }
 
         public void CleanAll()

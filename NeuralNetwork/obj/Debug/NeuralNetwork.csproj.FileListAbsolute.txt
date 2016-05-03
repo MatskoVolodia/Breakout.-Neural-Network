@@ -1,5 +1,5 @@
 C:\vova\CSharp\Breakout\NeuralNetwork\bin\Debug\NeuralNetwork.dll
 C:\vova\CSharp\Breakout\NeuralNetwork\bin\Debug\NeuralNetwork.pdb
-C:\vova\CSharp\Breakout\NeuralNetwork\obj\Debug\NeuralNetwork.csprojResolveAssemblyReference.cache
 C:\vova\CSharp\Breakout\NeuralNetwork\obj\Debug\NeuralNetwork.dll
 C:\vova\CSharp\Breakout\NeuralNetwork\obj\Debug\NeuralNetwork.pdb
+C:\vova\CSharp\Breakout\NeuralNetwork\obj\Debug\NeuralNetwork.csprojResolveAssemblyReference.cache

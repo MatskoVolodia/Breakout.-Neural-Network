@@ -8,9 +8,9 @@ using System.IO;
 
 /// <summary>
 /// Classic example of Neural Network
-/// Read about in on: https://stevenmiller888.github.io/mind-how-to-build-a-neural-network/
-/// Learn about in on: https://www.youtube.com/watch?v=9aHJ-FAzQaE
-/// Game idea and architecture of classes is all mine
+/// Read about it on: https://stevenmiller888.github.io/mind-how-to-build-a-neural-network/
+/// Learn about it on: https://www.youtube.com/watch?v=9aHJ-FAzQaE
+/// Game idea and architecture of classes are all mine
 /// End serri fir mi Englesh:)
 /// </summary>
 
@@ -22,6 +22,9 @@ namespace Breakout
         
         GameLogic newGame = new GameLogic();
         Neural myNetwork = new Neural(wFile, Neural.Sigmoid, Neural.DerivateSigmoid);
+
+        public static int Attemps = 0;
+        public static int Fails = 0;
 
         public BreakoutForm()
         {         
@@ -48,6 +51,7 @@ namespace Breakout
 
             newGame.mBall.DownSide += () =>
             {
+                Attemps++;
                 myNetwork.Target = newGame.mBall.X / 600; // it's not just dividing on 600. It's MIN-MAX data normalization, it's so easy just in my case. Go and read about it
                 MyChart.Series[0].Points.AddY(Math.Abs(newGame.mBall.X - newGame.mPlatform.X));
                 // we can check margins in this over comfortable chart. Enjoy
@@ -69,6 +73,7 @@ namespace Breakout
 
                 if ((newGame.mBall.X + newGame.mBall.Diameter < newGame.mPlatform.X) || (newGame.mBall.X > newGame.mPlatform.X + newGame.mPlatform.PlatformWidth))
                 {
+                    Fails++;
                     newGame.mBall.Clear();
                 }
                 else
@@ -79,6 +84,8 @@ namespace Breakout
                     newthr.Start();
                     return;
                 }
+
+                
             };
 
             newGame.mData.FullDataEvent += () => {
@@ -89,9 +96,10 @@ namespace Breakout
                 thr.Start();
             };
             myNetwork.NewOutputEvent += () =>
-            {
+            { 
                 newGame.mPlatform.GoToCoordinates(myNetwork.Output*600); // multiply on 600 because of normalization
             };
+            
         }
 
         private void MainTimer_Tick(object sender, EventArgs e)
@@ -103,7 +111,9 @@ namespace Breakout
                 // so we can just pass it
                 newGame.mBall.DoMove();
                 platformPicBox.Location = new Point((int)newGame.mPlatform.X, 600);
+                label1.Text = "Win: " + (Attemps - Fails).ToString() + "\nFails: " + Fails.ToString();
                 ballPicBox.Location = new Point((int)newGame.mBall.X, (int)newGame.mBall.Y);
+                
             }
             catch (Exception)
             {    

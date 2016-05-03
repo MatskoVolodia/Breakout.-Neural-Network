@@ -2,9 +2,9 @@
 
 /// <summary>
 /// Classic example of Neural Network
-/// Read about in on: https://stevenmiller888.github.io/mind-how-to-build-a-neural-network/
-/// Learn about in on: https://www.youtube.com/watch?v=9aHJ-FAzQaE
-/// Game idea and architecture of classes is all mine
+/// Read about it on: https://stevenmiller888.github.io/mind-how-to-build-a-neural-network/
+/// Learn about it on: https://www.youtube.com/watch?v=9aHJ-FAzQaE
+/// Game idea and architecture of classes are all mine
 /// End serri fir mi Englesh:)
 /// </summary>
 
@@ -56,7 +56,7 @@ namespace BreakoutClasses
             X = 290;
             Y = 5;
             Random rnd = new Random(DateTime.Now.Millisecond);
-            Dx = rnd.Next(-5, 5);
+            Dx = rnd.Next(-5, 5) + (float)rnd.NextDouble();
             Dy = 6;
         }
     }
@@ -74,13 +74,14 @@ namespace BreakoutClasses
             // new vector of movement when ball reachs platform calculates with a bit modified
             // x^3 function that has ZERO in the middle of platform
             float dx = 0; float dy = 0;
-            dx = (float)Math.Pow(((x - X) - ((PlatformWidth - 10) / 2)) / ((PlatformWidth - 10) / 2), 3);
+            dx = (float)Math.Pow(((x - X) - (PlatformWidth / 2)) / (PlatformWidth / 2), 3);
+            //if (Math.Abs(dx) < 0.3) dx += ((dx / Math.Abs(dx)) * 0.3f); 
             dy = (-1)*(float)Math.Sqrt(Speed - dx * dx); // we should do that do save speed
             return new Tuple<float, float>(dx, dy);
         }
         public void GoToCoordinates(float newX)
         {
-            X = newX;// - PlatformWidth / 2;
+            X = newX; // - PlatformWidth / 2;
 
             // in uncommentared case we move LEFT EXTREME POINT of platform to newX
             // in commentared part we would move MIDDLE of platform to there.
@@ -143,9 +144,6 @@ namespace BreakoutClasses
         public Ball mBall { get; set; } = new Ball();
         public Platform mPlatform { get; set; } = new Platform();
         public MovingData mData { get; set; } = new MovingData();
-
-        public delegate bool Failure();
-        public event Failure FailEvent;
 
         public GameLogic()
         {

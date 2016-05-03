@@ -37,6 +37,8 @@
             this.MainTimer = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.MyChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.MARGIN = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ballPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.platformPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyChart)).BeginInit();
@@ -89,12 +91,41 @@
             this.MyChart.TabIndex = 4;
             this.MyChart.Text = "chart1";
             // 
+            // MARGIN
+            // 
+            this.MARGIN.AutoSize = true;
+            this.MARGIN.BackColor = System.Drawing.Color.White;
+            this.MARGIN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.MARGIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.MARGIN.ForeColor = System.Drawing.Color.Black;
+            this.MARGIN.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.MARGIN.Location = new System.Drawing.Point(245, 52);
+            this.MARGIN.Name = "MARGIN";
+            this.MARGIN.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.MARGIN.Size = new System.Drawing.Size(41, 15);
+            this.MARGIN.TabIndex = 5;
+            this.MARGIN.Text = "Margin";
+            this.MARGIN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(515, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 28);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Win: 0\r\nFailure: 0";
+            // 
             // BreakoutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(599, 611);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.MARGIN);
             this.Controls.Add(this.MyChart);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.platformPicBox);
@@ -108,6 +139,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.platformPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyChart)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -118,6 +150,8 @@
         private System.Windows.Forms.Timer MainTimer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataVisualization.Charting.Chart MyChart;
+        private System.Windows.Forms.Label MARGIN;
+        private System.Windows.Forms.Label label1;
     }
 }
 
